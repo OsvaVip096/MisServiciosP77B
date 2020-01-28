@@ -32,7 +32,7 @@ public class MiIntentService extends IntentService {
     protected void onHandleIntent(@Nullable Intent intent) {
         try {
             Toast.makeText(this, "Inicia subproceso", Toast.LENGTH_LONG);
-            Thread.sleep(10000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }

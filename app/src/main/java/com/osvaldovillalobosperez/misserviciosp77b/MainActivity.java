@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         startService(miIS);
 
-        Toast.makeText(this, "Iniciado", Toast.LENGTH_LONG);
+        Toast.makeText(this, "Iniciado IS", Toast.LENGTH_LONG);
     }
 
     public void btnSerInic(View view) {
@@ -28,6 +29,12 @@ public class MainActivity extends AppCompatActivity {
 
         startService(miS);
 
-        Toast.makeText(this, "Iniciado", Toast.LENGTH_LONG);
+        Toast.makeText(this, "Iniciado S", Toast.LENGTH_LONG);
+    }
+
+    public void btnSS_clic(View view) {
+        Intent miIS = new Intent(this, MiServicio.class);
+        stopService(miIS);
+        Log.d("XXXs", "Servicio destruido");
     }
 }
