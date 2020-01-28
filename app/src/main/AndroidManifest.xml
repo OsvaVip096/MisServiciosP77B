@@ -24,7 +24,7 @@
         <service android:name=".MiServicio">
 
         </service>
-        
+
     </application>
 
 </manifest>
