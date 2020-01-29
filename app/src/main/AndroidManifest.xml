@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,14 +18,9 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".MiIntentService">
-
-        </service>
-
-        <service android:name=".MiServicio">
-
-        </service>
-
+        <service android:name=".MiIntentService" />
+        <service android:name=".MiServicio" />
+        <service android:name=".MiServicioEnlazado" />
     </application>
 
 </manifest>
