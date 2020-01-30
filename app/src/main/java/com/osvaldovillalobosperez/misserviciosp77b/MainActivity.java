@@ -3,6 +3,7 @@ package com.osvaldovillalobosperez.misserviciosp77b;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
@@ -44,6 +45,11 @@ public class MainActivity extends AppCompatActivity {
         Log.d("XXXs", "Servicio destruido");
     }
 
+    /**
+     * Servicio enlazado.
+     *
+     * @param v
+     */
     public void onButtonClick(View v) {
         if (mBound) {
             int num = miServicioEnlazado.getRandomNumber();
@@ -66,4 +72,18 @@ public class MainActivity extends AppCompatActivity {
             mBound = false;
         }
     };
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Intent intent = new Intent(this, MiServicioEnlazado.class);
+        bindService(intent, sconect, Context.BIND_AUTO_CREATE);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        unbindService(sconect);
+        mBound = false;
+    }
 }
